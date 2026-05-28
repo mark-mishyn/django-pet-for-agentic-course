@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uv run *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Edit(.claude/settings.json)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_name' | { read -r t; echo \"$(date '+%Y-%m-%d %H:%M:%S') | $t\" >> LOGS.md; }"
+          }
+        ]
+      }
+    ]
+  }
+}
