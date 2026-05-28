@@ -4,4 +4,5 @@ __pycache__/
 db.sqlite3
 .claude/settings.local.json
 .idea/
+LOGS_WITHOUT_SKILL.md
 LOGS.md
