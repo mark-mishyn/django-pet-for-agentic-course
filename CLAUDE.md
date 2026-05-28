@@ -14,7 +14,7 @@
 - Minimal setup: no admin, no auth, no sessions, no messages
 - Add these back only when explicitly requested
 - Use uv for all Python/dependency commands (not pip)
-- ALWAYS run `uv run ruff check --fix . && uv run ruff format .` before commits. If ruff check fails, fix all issues before proceeding — never commit code that doesn't pass ruff
+- ALWAYS use the `commit` skill for all git commits — never commit manually
 - Always use double quotes for strings (e.g., `"hello"` not `'hello'`)
 - Always use modern Python 3.13 type hints (e.g., `str | None` not `Optional[str]`, `list[str]` not `List[str]`)
 - Use built-in Django test framework for unit testing — no pytest
