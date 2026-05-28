@@ -8,13 +8,24 @@
     ]
   },
   "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.prompt // empty' | { read -r p; echo \"## $(date '+%Y-%m-%d %H:%M:%S') | prompt\"; echo \"> ${p:0:500}\"; echo \"\"; } >> LOGS.md"
+          }
+        ]
+      }
+    ],
     "PreToolUse": [
       {
         "matcher": "",
         "hooks": [
           {
             "type": "command",
-            "command": "jq -r '.tool_name' | { read -r t; echo \"$(date '+%Y-%m-%d %H:%M:%S') | $t\" >> LOGS.md; }"
+            "command": "jq -r '[.tool_name, (.tool_input | tostring)] | join(\" | \")' | { read -r line; echo \"## $(date '+%Y-%m-%d %H:%M:%S') | tool | $line\"; echo \"\"; } >> LOGS.md"
           }
         ]
       }
