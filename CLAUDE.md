@@ -17,4 +17,8 @@
 - ALWAYS run `uv run ruff check --fix . && uv run ruff format .` before commits. If ruff check fails, fix all issues before proceeding — never commit code that doesn't pass ruff
 - Always use double quotes for strings (e.g., `"hello"` not `'hello'`)
 - Always use modern Python 3.13 type hints (e.g., `str | None` not `Optional[str]`, `list[str]` not `List[str]`)
-- Use built-in Django test framework (`django.test.TestCase`) for unit testing — no pytest
+- Use built-in Django test framework for unit testing — no pytest
+- Use `TransactionTestCase` for all test classes that write to the database; use `TestCase` only for read-only tests
+- Use class-based views (CBVs) for all views
+- Views are JSON REST API endpoints (no templates, no HTML)
+- Use custom plain-class serializers (no DRF) with static methods: `serialize(instance)`, `serialize_many(queryset)`, `deserialize(data)`

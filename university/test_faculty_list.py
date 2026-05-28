@@ -1,10 +1,10 @@
 import json
-from django.test import TestCase
+from django.test import TransactionTestCase
 from django.urls import reverse
 from .models import Faculty
 
 
-class FacultyListViewTests(TestCase):
+class FacultyListViewTests(TransactionTestCase):
     def test_get_empty_list(self):
         """Test GET request returns empty list when no faculties exist."""
         url = reverse("faculty-list")
