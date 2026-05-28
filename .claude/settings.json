@@ -3,8 +3,8 @@
     "allow": [
       "Bash(uv run *)",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)",
-      "Edit(.claude/settings.json)"
+      "Bash(git commit *)",
+      "Edit(*/.claude/settings.json)"
     ]
   },
   "hooks": {
