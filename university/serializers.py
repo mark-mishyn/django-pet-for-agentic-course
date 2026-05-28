@@ -3,11 +3,11 @@ class FacultySerializer:
     def serialize(faculty):
         """Serialize a Faculty instance to a dictionary."""
         return {
-            'id': faculty.id,
-            'title': faculty.title,
-            'description': faculty.description,
-            'created_at': faculty.created_at.isoformat(),
-            'updated_at': faculty.updated_at.isoformat()
+            "id": faculty.id,
+            "title": faculty.title,
+            "description": faculty.description,
+            "created_at": faculty.created_at.isoformat(),
+            "updated_at": faculty.updated_at.isoformat(),
         }
 
     @staticmethod
@@ -18,7 +18,4 @@ class FacultySerializer:
     @staticmethod
     def deserialize(data):
         """Extract and validate data for creating/updating a Faculty."""
-        return {
-            'title': data.get('title'),
-            'description': data.get('description', '')
-        }
+        return {"title": data.get("title"), "description": data.get("description", "")}

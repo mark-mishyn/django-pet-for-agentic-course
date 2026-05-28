@@ -14,7 +14,7 @@ class FacultyListView(View):
         return JsonResponse(data, safe=False)
 
 
-@method_decorator(csrf_exempt, name='dispatch')
+@method_decorator(csrf_exempt, name="dispatch")
 class FacultyCreateView(View):
     def post(self, request):
         try:
@@ -23,7 +23,7 @@ class FacultyCreateView(View):
             faculty = Faculty.objects.create(**faculty_data)
             return JsonResponse(FacultySerializer.serialize(faculty), status=201)
         except Exception as e:
-            return JsonResponse({'error': str(e)}, status=400)
+            return JsonResponse({"error": str(e)}, status=400)
 
 
 class FacultyRetrieveView(View):
@@ -32,10 +32,10 @@ class FacultyRetrieveView(View):
             faculty = Faculty.objects.get(pk=pk)
             return JsonResponse(FacultySerializer.serialize(faculty))
         except Faculty.DoesNotExist:
-            return JsonResponse({'error': 'Faculty not found'}, status=404)
+            return JsonResponse({"error": "Faculty not found"}, status=404)
 
 
-@method_decorator(csrf_exempt, name='dispatch')
+@method_decorator(csrf_exempt, name="dispatch")
 class FacultyUpdateView(View):
     def put(self, request, pk):
         try:
@@ -49,17 +49,17 @@ class FacultyUpdateView(View):
 
             return JsonResponse(FacultySerializer.serialize(faculty))
         except Faculty.DoesNotExist:
-            return JsonResponse({'error': 'Faculty not found'}, status=404)
+            return JsonResponse({"error": "Faculty not found"}, status=404)
         except Exception as e:
-            return JsonResponse({'error': str(e)}, status=400)
+            return JsonResponse({"error": str(e)}, status=400)
 
 
-@method_decorator(csrf_exempt, name='dispatch')
+@method_decorator(csrf_exempt, name="dispatch")
 class FacultyDeleteView(View):
     def delete(self, request, pk):
         try:
             faculty = Faculty.objects.get(pk=pk)
             faculty.delete()
-            return JsonResponse({'message': 'Faculty deleted successfully'}, status=204)
+            return JsonResponse({"message": "Faculty deleted successfully"}, status=204)
         except Faculty.DoesNotExist:
-            return JsonResponse({'error': 'Faculty not found'}, status=404)
+            return JsonResponse({"error": "Faculty not found"}, status=404)
