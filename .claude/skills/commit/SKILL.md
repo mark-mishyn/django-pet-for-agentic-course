@@ -1,6 +1,6 @@
 ---
 name: commit
-description: Automate the git commit workflow — lint, format, stage, and commit with a well-crafted message. Use this skill whenever the user says "commit", "commit changes", "commit this", "save changes", or anything that implies creating a git commit. Always use this skill for commits instead of doing the steps manually.
+description: Automate the git commit workflow — lint, format, stage, and commit with a well-crafted message. Only use when the user explicitly invokes /commit — never trigger proactively or as part of another task.
 ---
 
 # Commit

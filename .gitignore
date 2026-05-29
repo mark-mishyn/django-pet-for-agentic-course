@@ -5,4 +5,4 @@ db.sqlite3
 .claude/settings.local.json
 .idea/
 LOGS_WITHOUT_SKILL.md
-LOGS.md
+LOGS_DURING_TRANSITION.md

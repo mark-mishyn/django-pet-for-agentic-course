@@ -14,7 +14,7 @@
 - Minimal setup: no admin, no auth, no sessions, no messages
 - Add these back only when explicitly requested
 - Use uv for all Python/dependency commands (not pip)
-- ALWAYS use the `commit` skill for all git commits — never commit manually
+- ALWAYS use the `commit` skill for git commits — but only when explicitly asked to commit, never proactively
 - ALWAYS use the `generate-tests` skill when writing tests — never write tests ad-hoc
 - ALWAYS use the `crud-endpoints` skill when adding REST endpoints for a model — never scaffold views/urls/serializers ad-hoc
 - Always use double quotes for strings (e.g., `"hello"` not `'hello'`)
