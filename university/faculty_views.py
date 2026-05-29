@@ -1,8 +1,10 @@
 import json
+
 from django.http import JsonResponse
-from django.views import View
 from django.utils.decorators import method_decorator
+from django.views import View
 from django.views.decorators.csrf import csrf_exempt
+
 from .models import Faculty
 from .serializers import FacultySerializer
 

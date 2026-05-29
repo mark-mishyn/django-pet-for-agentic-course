@@ -12,3 +12,19 @@ class Faculty(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Department(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    description = models.TextField()
+    faculty = models.ForeignKey(
+        Faculty, on_delete=models.CASCADE, related_name="departments"
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name_plural = "Departments"
+
+    def __str__(self):
+        return self.title
