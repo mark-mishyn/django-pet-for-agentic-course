@@ -75,12 +75,3 @@ university/
     faculty/        Faculty endpoint tests
     department/     Department endpoint tests
 ```
-
-## Agentic Engineering
-
-This project is built almost entirely through AI-assisted development using [Claude Code](https://docs.anthropic.com/en/docs/claude-code). The development workflow relies on custom Claude Code skills for:
-
-- **CRUD scaffolding** -- generating views, serializers, URLs, and tests for new models
-- **Test generation** -- producing tests that follow project conventions
-- **Commit automation** -- linting, formatting, and crafting commit messages
-- **Pre-commit hooks** -- running the full test suite before every commit
