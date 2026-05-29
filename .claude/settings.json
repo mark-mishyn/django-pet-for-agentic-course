@@ -29,6 +29,15 @@
             "command": "jq -r '[.tool_name, (.tool_input | tostring)] | join(\" | \")' | { read -r line; echo \"## $(date '+%Y-%m-%d %H:%M:%S') | tool | $line\"; echo \"\"; } >> LOGS.md"
           }
         ]
+      },
+      {
+        "matcher": "Bash(git commit *)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "output=$(uv run python manage.py test 2>&1); rc=$?; if [ $rc -ne 0 ]; then echo '{\"decision\": \"block\", \"reason\": \"Tests failed. Fix failing tests before committing.\"}'; else echo '{\"decision\": \"allow\"}'; fi"
+          }
+        ]
       }
     ]
   }
