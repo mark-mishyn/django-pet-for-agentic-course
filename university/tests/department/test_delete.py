@@ -3,7 +3,7 @@ import json
 from django.test import TransactionTestCase
 from django.urls import reverse
 
-from .models import Department, Faculty
+from ...models import Department, Faculty
 
 
 class DepartmentDeleteViewTests(TransactionTestCase):
